@@ -1,13 +1,18 @@
 var isLeapYear = function(year) {
-  return false;
+  if (year %4 === 0) {
+    return true;
+  } else {
+    return false;
+  }
 }
+
 
 //Start jquery
 $(document).ready(function(){
   $("form#leap-year").submit(function(event){
     event.preventDefault();
     var year = $("#userInput").val();
-
-    $("#result").text(isLeapYear(year)).show();
+    var result = isLeapYear(year);
+    $("#result").text(result).show();
   });
 });
